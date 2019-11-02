@@ -1,6 +1,6 @@
 import smash from '../../helpers/data/smash';
 import utilities from '../../helpers/utilities';
-import snack from '../snacks/snacks';
+import snacks from '../snacks/snacks';
 import './machine.scss';
 
 const buildTheMachine = () => {
@@ -14,10 +14,11 @@ const buildTheMachine = () => {
       // printToDom('stock', domString)
 
       let domString = '<h2>VENDING MACHINE</h2>';
-      domString += '<div id="snackSection" class="d-flex flex-wrap"></div>';
+      domString += '<div id="snackSection" class="d-flex flex-wrap">';
       positions.forEach((position) => {
-        domString += snack.makeASnack(position);
+        domString += snacks.makeASnack(position);
       });
+      domString += '</div>';
       utilities.printToDOM('stock', domString);
     })
     .catch((error) => console.error(error));
