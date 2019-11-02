@@ -1,9 +1,25 @@
 import smash from '../../helpers/data/smash';
+import utilities from '../../helpers/utilities';
+import snack from '../snacks/snacks';
 import './machine.scss';
 
 const buildTheMachine = () => {
   smash.getCompleteMachine()
-    .then((singleMachine) => console.log('1 machine', singleMachine))
+    .then((positions) => {
+      // domString builder
+      // h2 that says VENDING MACHINE
+      // div with id = "snackSection", class= d-flex, flex-wrap
+      // forEach over positions - call a component called snacks
+      // snacks component should return bootstrap card
+      // printToDom('stock', domString)
+
+      let domString = '<h2>VENDING MACHINE</h2>';
+      domString += '<div id="snackSection" class="d-flex flex-wrap"></div>';
+      positions.forEach((position) => {
+        domString += snack.makeASnack(position);
+      });
+      utilities.printToDOM('stock', domString);
+    })
     .catch((error) => console.error(error));
 };
 
