@@ -1,0 +1,42 @@
+{
+  "snack1": {
+    "imageURL": "https://images.freshop.com/00028400638159/1204c9c776fed3147eee68bcff153cdc_medium.png",
+    "name": "Cheetos",
+    "price": 100,
+    "currentStocked": 4,
+    "lifetimeNum": 10,
+    "uid": "TINQMTYEJtTo4VwDFDOudf3ma802"
+  },
+  "snack2": {
+    "imageURL": "https://cdn.shopify.com/s/files/1/1732/5583/products/cf372fbe78d85e8d56e95a1b028effa1_medium_c1344eae-4a0f-42ba-be33-fd681422b8ec_large.png?v=1512864987",
+    "name": "M&Ms",
+    "price": 200,
+    "currentStocked": 6,
+    "lifetimeNum": 12,
+    "uid": "TINQMTYEJtTo4VwDFDOudf3ma802"
+  },
+  "snack3": {
+    "imageURL": "https://images.freshop.com/00079200393786/d20f819b8f0cba7a2440fc59d9a62bea_medium.png",
+    "name": "Sweettart",
+    "price": 80,
+    "currentStocked": 2,
+    "lifetimeNum": 4,
+    "uid": "TINQMTYEJtTo4VwDFDOudf3ma802"
+  },
+  "snack4": {
+    "imageURL": "https://res-1.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco/gz1uzorjavicqjbk6s7r",
+    "name": "Gushers",
+    "price": 90,
+    "currentStocked": 20,
+    "lifetimeNum": 22,
+    "uid": "TINQMTYEJtTo4VwDFDOudf3ma802"
+  },
+  "snack5": {
+    "imageURL": "https://images.freshop.com/00016000462946/16487243baceffce1ec804f38106894b_medium.png",
+    "name": "Bugles",
+    "price": 100,
+    "currentStocked": 10,
+    "lifetimeNum": 11,
+    "uid": "12345"
+  }
+}
