@@ -19,4 +19,20 @@ const getSnacksByUid = (uid) => new Promise((resolve, reject) => {
 
 const addNewSnack = (newSnack) => axios.post(`${baseUrl}/snacks.json`, newSnack);
 
-export default { getSnacksByUid, addNewSnack };
+const updateSnack = (snackID, updatedSnack) => axios.put(`${baseUrl}/snacks/${snackID}.json`, updatedSnack);
+
+const restock = (snackID, restockNum) => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/snacks/${snackID}.json`)
+  // the whole promise is going through .then as 'result'. Need to only get the object
+    .then((result) => {
+      const snackObject = result.data;
+      snackObject.currentStocked += restockNum;
+      snackObject.lifetimeNum += restockNum;
+      updateSnack(snackID, snackObject);
+      // don't care what comes back, only that it works
+      resolve();
+    })
+    .catch((error) => reject(error));
+});
+
+export default { getSnacksByUid, addNewSnack, restock };
