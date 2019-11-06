@@ -1,7 +1,19 @@
+import $ from 'jquery';
 import smash from '../../helpers/data/smash';
 import utilities from '../../helpers/utilities';
 import snacks from '../snacks/snacks';
 import './machine.scss';
+import snackData from '../../helpers/data/snackData';
+
+const buySnack = (e) => {
+  e.stopImmediatePropagation();
+  const snackID = e.target.id.split('buy-')[1];
+  // console.log(snackID);
+  snackData.buySnack(snackID)
+    // eslint-disable-next-line no-use-before-define
+    .then(() => buildTheMachine())
+    .catch((error) => console.error(error));
+};
 
 const buildTheMachine = () => {
   smash.getCompleteMachine()
@@ -20,6 +32,7 @@ const buildTheMachine = () => {
       });
       domString += '</div>';
       utilities.printToDOM('machine', domString);
+      $('#machine').on('click', '.buySnack', buySnack);
     })
     .catch((error) => console.error(error));
 };
